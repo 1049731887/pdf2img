@@ -21,7 +21,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="description" content="PDF Viewer" />
-		<title>Convert PDF To Image</title>
+		<title>PDF转图片</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/mian.css" />
 	</head>
@@ -39,7 +39,7 @@
 					<div class="name">PDF转图片</div>
 					<div class="job">
 						文档大小
-						< 10Mb </div> <div class="actions">
+						< 30Mb </div> <div class="actions">
 							<a href="javascript:;" class="btn file">
 								Choose Pdf
 								<input id='pdf' type='file' accept="application/pdf">
@@ -95,8 +95,8 @@
 					var mb;
 					if (fileSize) {
 						mb = fileSize / 1048576;
-						if (mb > 10) {
-							alert("文件大小不能>10M");
+						if (mb > 30) {
+							alert("文件大小不能>30M");
 							return;
 						}
 					}
@@ -136,7 +136,7 @@
 			});
 
 			function openPage(pdfFile, pageNumber, context) {
-				var scale = 2;
+				var scale = 5;
 				pdfFile.getPage(pageNumber).then(function(page) {
 					viewport = page.getViewport(scale); // reference canvas via context
 					var canvas = context.canvas;
